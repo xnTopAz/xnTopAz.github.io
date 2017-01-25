@@ -124,6 +124,63 @@
       <div class="body-wrap">
         
   
+    <article id="post-iOS-simulate-location" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/26/iOS-simulate-location/">iOS模拟定位</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网上教程有很多，大多都是使用手机助手工具，备份的信息有被上传的风险。记录一下用苹果的 iTunes 完成相同功能的步骤。<br>使用 iTunes 连接手机，点立即备份到本电脑，不使用加密。</p>
+<img src="/2017/01/26/iOS-simulate-location/1.png" alt="1.png" title="">
+<p>打开 iTunes 偏好设置 -&gt; 设备，选中刚刚的备份信息，在 Finder 中显示。</p>
+<img src="/2017/01/26/iOS-simulate-location/2.png" alt="2.png" title="">
+<p>用 sqlite3 打开里面的 Manifest.db 文件。</p>
+<img src="/2017/01/26/iOS-simulate-location/3.png" alt="3.png" title="">
+<p>在备份文件中找到 FileID 字段的同名文件，用 plutil 转为 xml 格式。</p>
+<img src="/2017/01/26/iOS-simulate-location/4.png" alt="4.png" title="">
+<p>编辑文件，最后加两行，启用Simulate Location。</p>
+<img src="/2017/01/26/iOS-simulate-location/5.png" alt="5.png" title="">
+<p>转回 binary 格式，然后恢复备份。</p>
+<img src="/2017/01/26/iOS-simulate-location/6.png" alt="6.png" title="">
+<p>地图应用中的 Simulate Location 功能启用了。iOS 本来就有模拟定位功能，只是没有启用。</p>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/01/26/iOS-simulate-location/" class="archive-article-date">
+  	<time datetime="2017-01-25T17:28:33.000Z" itemprop="datePublished"><i class="icon-clock"></i>2017-01-26</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -187,7 +244,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2016 X;n
+    		&copy; 2017 X;n
     	</div>
       	<div class="footer-right">
       	</div>
